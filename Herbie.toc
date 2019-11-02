@@ -1,0 +1,8 @@
+## Interface: 11302
+## Title: Herbie
+## Author: Ffafyrd
+## Version 0.1
+
+HerbieDB.lua
+Herbie.lua
+
