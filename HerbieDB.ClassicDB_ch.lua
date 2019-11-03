@@ -121,7 +121,6 @@ HerbieDB = {
 	["Lesser Healing Potion"] = { ["Minor Healing Potion"] = 1, ["Briarthorn"] = 1, }, 
 
 -- leatherworking
-	["Leatherworking"] = { }, 
 	["Handstitched Leather Boots"] = { ["Light Leather"] = 2, ["Coarse Thread"] = 1, }, 
 	["Light Armor Kit"] = { ["Light Leather"] = 1, }, 
 	["Fine Leather Cloak"] = { ["Light Leather"] = 10, ["Fine Thread"] = 2, }, 
@@ -150,13 +149,13 @@ HerbieDB = {
 	["Green Leather Bracers"] = { ["Cured Heavy Hide"] = 2, ["Heavy Leather"] = 6, ["Green Dye"] = 1, ["Fine Thread"] = 1, }, 
 	["Guardian Leather Bracers"] = { ["Heavy Leather"] = 6, ["Cured Heavy Hide"] = 2, ["Silken Thread"] = 1, }, 
 	["Gem-studded Leather Belt"] = { ["Cured Heavy Hide"] = 4, ["Iridescent Pearl"] = 2, ["Jade"] = 2, ["Citrine"] = 1, ["Fine Thread"] = 1, }, 
-	["Barbaric Belt"] = { ["Heavy Leather"] = 6, ["Cured Heavy Hide"] = 2, ["Coarse Gorilla Hair"] = 2, ["Great Rage Potion"] = 1, ["Silken Thread"] = 1, ["Iron Buckle"] = 1, }, 
+	["Barbaric Belt"] = { ["Heavy Leather"] = 6, ["Cured Heavy Hide"] = 2, ["Raptor Hide Harness"] = 2, ["Great Rage Potion"] = 1, ["Silken Thread"] = 1, ["Iron Buckle"] = 1, }, 
 	["Cured Light Hide"] = { ["Light Hide"] = 1, ["Salt"] = 1, }, 
 	["Cured Medium Hide"] = { ["Medium Hide"] = 1, ["Salt"] = 1, }, 
 	["Cured Heavy Hide"] = { ["Heavy Hide"] = 1, ["Salt"] = 3, }, 
 	["Heavy Armor Kit"] = { ["Heavy Leather"] = 5, ["Fine Thread"] = 1, }, 
 	["Raptor Hide Belt"] = { ["Raptor Hide"] = 4, ["Heavy Leather"] = 4, ["Fine Thread"] = 2, }, 
-	["Raptor Hide Harness"] = { ["Raptor Hide"] = 6, ["Heavy Leather"] = 4, ["Fine Thread"] = 2, }, -- duplicate item, original: Coarse Gorilla Hair
+	["Raptor Hide Harness"] = { ["Raptor Hide"] = 6, ["Heavy Leather"] = 4, ["Fine Thread"] = 2, }, 
 	["Kodo Hide Bag"] = { ["Thin Kodo Leather"] = 3, ["Light Leather"] = 4, ["Coarse Thread"] = 1, }, 
 	["Barbaric Harness"] = { ["Heavy Leather"] = 14, ["Fine Thread"] = 2, ["Iron Buckle"] = 1, }, 
 	["Murloc Scale Belt"] = { ["Slimy Murloc Scale"] = 8, ["Light Leather"] = 6, ["Fine Thread"] = 1, }, 
@@ -245,12 +244,12 @@ HerbieDB = {
 	["Quickdraw Quiver"] = { ["Thick Leather"] = 12, ["Cured Thick Hide"] = 1, ["Elixir of Agility"] = 1, ["Silken Thread"] = 4, }, 
 	["Thick Leather Ammo Pouch"] = { ["Thick Leather"] = 10, ["Cured Thick Hide"] = 1, ["Elixir of Greater Defense"] = 1, ["Silken Thread"] = 6, }, 
 	["Cured Rugged Hide"] = { ["Rugged Hide"] = 1, ["Refined Deeprock Salt"] = 1, }, 
-	["Rugged Armor Kit"] = { ["Rugged Leather"] = 5, }, -- duplicate item, original: Golden Mantle of the Dawn
+	["Rugged Armor Kit"] = { ["Rugged Leather"] = 5, }, 
 	["Heavy Scorpid Bracers"] = { ["Rugged Leather"] = 4, ["Heavy Scorpid Scale"] = 4, ["Rune Thread"] = 1, }, 
-	["Wicked Leather Gauntlets"] = { ["Rugged Leather"] = 8, ["Black Dye"] = 1, ["Rune Thread"] = 1, }, -- duplicate item, original: Timbermaw Brawlers
+	["Wicked Leather Gauntlets"] = { ["Rugged Leather"] = 8, ["Black Dye"] = 1, ["Rune Thread"] = 1, }, 
 	["Green Dragonscale Breastplate"] = { ["Rugged Leather"] = 20, ["Green Dragonscale"] = 25, ["Rune Thread"] = 2, }, 
 	["Heavy Scorpid Vest"] = { ["Rugged Leather"] = 6, ["Heavy Scorpid Scale"] = 6, ["Rune Thread"] = 1, }, 
-	["Wicked Leather Bracers"] = { ["Rugged Leather"] = 8, ["Black Dye"] = 1, ["Rune Thread"] = 1, }, -- duplicate item, original: Dawn Treaders
+	["Wicked Leather Bracers"] = { ["Rugged Leather"] = 8, ["Black Dye"] = 1, ["Rune Thread"] = 1, }, 
 	["Chimeric Gloves"] = { ["Rugged Leather"] = 6, ["Chimera Leather"] = 6, ["Rune Thread"] = 1, }, 
 	["Red Dragonscale Breastplate"] = { ["Rugged Leather"] = 40, ["Red Dragonscale"] = 30, ["Rune Thread"] = 1, }, 
 	["Runic Leather Gauntlets"] = { ["Rugged Leather"] = 10, ["Runecloth"] = 6, ["Rune Thread"] = 1, }, 
@@ -409,7 +408,7 @@ HerbieDB = {
 	["Long Silken Cloak"] = { ["Bolt of Silk Cloth"] = 4, ["Mana Potion"] = 1, ["Silken Thread"] = 1, }, 
 	["Icy Cloak"] = { ["Bolt of Mageweave"] = 3, ["Silken Thread"] = 2, ["Frost Oil"] = 1, ["Thick Spider's Silk"] = 2, }, 
 	["Spider Belt"] = { ["Bolt of Silk Cloth"] = 4, ["Thick Spider's Silk"] = 2, ["Iron Buckle"] = 1, }, 
-	["Star Belt"] = { ["Bolt of Mageweave"] = 4, ["Heavy Leather"] = 4, ["Citrine"] = 1, ["Iron Buckle"] = 1, ["Silken Thread"] = 1, }, -- duplicate item, original: Citrine
+	["Star Belt"] = { ["Bolt of Mageweave"] = 4, ["Heavy Leather"] = 4, ["Star Belt"] = 1, ["Iron Buckle"] = 1, ["Silken Thread"] = 1, }, 
 	["Stylish Red Shirt"] = { ["Bolt of Woolen Cloth"] = 3, ["Red Dye"] = 2, ["Fine Thread"] = 1, }, 
 	["Phoenix Gloves"] = { ["Bolt of Woolen Cloth"] = 4, ["Iridescent Pearl"] = 1, ["Fine Thread"] = 4, ["Bleach"] = 2, }, 
 	["Bright Yellow Shirt"] = { ["Bolt of Silk Cloth"] = 1, ["Yellow Dye"] = 1, ["Fine Thread"] = 1, }, 
@@ -518,15 +517,15 @@ HerbieDB = {
 	["Frostweave Tunic"] = { ["Bolt of Runecloth"] = 5, ["Globe of Water"] = 2, ["Rune Thread"] = 1, }, 
 	["Frostweave Robe"] = { ["Bolt of Runecloth"] = 5, ["Globe of Water"] = 2, ["Rune Thread"] = 1, }, 
 	["Runecloth Robe"] = { ["Bolt of Runecloth"] = 5, ["Ironweb Spider Silk"] = 1, ["Rune Thread"] = 1, }, 
-	["Runecloth Bag"] = { ["Bolt of Runecloth"] = 5, ["Rugged Leather"] = 2, ["Rune Thread"] = 1, }, -- duplicate item, original: Belt of the Archmage
-	["Runecloth Tunic"] = { ["Bolt of Runecloth"] = 5, ["Ironweb Spider Silk"] = 1, ["Rune Thread"] = 1, }, -- duplicate item, original: Felcloth Gloves
-	["Cindercloth Vest"] = { ["Bolt of Runecloth"] = 5, ["Heart of Fire"] = 3, ["Rune Thread"] = 1, }, -- duplicate item, original: Inferno Gloves
-	["Runecloth Cloak"] = { ["Bolt of Runecloth"] = 4, ["Ironweb Spider Silk"] = 1, ["Rune Thread"] = 1, }, -- duplicate item, original: Mooncloth Gloves
+	["Runecloth Bag"] = { ["Bolt of Runecloth"] = 5, ["Rugged Leather"] = 2, ["Rune Thread"] = 1, }, 
+	["Runecloth Tunic"] = { ["Bolt of Runecloth"] = 5, ["Ironweb Spider Silk"] = 1, ["Rune Thread"] = 1, }, 
+	["Cindercloth Vest"] = { ["Bolt of Runecloth"] = 5, ["Heart of Fire"] = 3, ["Rune Thread"] = 1, }, 
+	["Runecloth Cloak"] = { ["Bolt of Runecloth"] = 4, ["Ironweb Spider Silk"] = 1, ["Rune Thread"] = 1, }, 
 	["Ghostweave Belt"] = { ["Bolt of Runecloth"] = 3, ["Ghost Dye"] = 2, ["Ironweb Spider Silk"] = 1, ["Rune Thread"] = 1, }, 
 	["Frostweave Gloves"] = { ["Bolt of Runecloth"] = 3, ["Essence of Water"] = 1, ["Rune Thread"] = 1, }, 
 	["Cindercloth Gloves"] = { ["Bolt of Runecloth"] = 4, ["Heart of Fire"] = 3, ["Rune Thread"] = 1, }, 
 	["Brightcloth Gloves"] = { ["Bolt of Runecloth"] = 4, ["Gold Bar"] = 2, ["Rune Thread"] = 1, }, 
-	["Ghostweave Gloves"] = { ["Bolt of Runecloth"] = 4, ["Ghost Dye"] = 2, ["Ironweb Spider Silk"] = 1, ["Rune Thread"] = 1, }, -- duplicate item, original: Cloak of Warding
+	["Ghostweave Gloves"] = { ["Bolt of Runecloth"] = 4, ["Ghost Dye"] = 2, ["Ironweb Spider Silk"] = 1, ["Rune Thread"] = 1, }, 
 	["Brightcloth Robe"] = { ["Bolt of Runecloth"] = 5, ["Gold Bar"] = 2, ["Rune Thread"] = 1, }, 
 	["Ghostweave Vest"] = { ["Bolt of Runecloth"] = 6, ["Ghost Dye"] = 4, ["Ironweb Spider Silk"] = 1, ["Rune Thread"] = 1, }, 
 	["Runecloth Gloves"] = { ["Bolt of Runecloth"] = 4, ["Rugged Leather"] = 4, ["Rune Thread"] = 1, }, 
@@ -633,8 +632,8 @@ HerbieDB = {
 	["Green Iron Boots"] = { ["Iron Bar"] = 4, ["Lesser Moonstone"] = 2, ["Coarse Grinding Stone"] = 2, ["Green Dye"] = 1, }, 
 	["Green Iron Gauntlets"] = { ["Iron Bar"] = 4, ["Small Lustrous Pearl"] = 2, ["Coarse Grinding Stone"] = 2, ["Green Dye"] = 1, }, 
 	["Heavy Grinding Stone"] = { ["Heavy Stone"] = 3, }, 
-	["Big Bronze Knife"] = { ["Bronze Bar"] = 6, ["Weak Flux"] = 4, ["Rough Grinding Stone"] = 2, ["Tigerseye"] = 1, ["Medium Leather"] = 1, }, -- duplicate item, original: Heavy Bronze Mace
-	["Hardened Iron Shortsword"] = { ["Iron Bar"] = 6, ["Strong Flux"] = 2, ["Heavy Grinding Stone"] = 1, ["Lesser Moonstone"] = 2, ["Heavy Leather"] = 3, }, -- duplicate item, original: Mighty Iron Hammer
+	["Big Bronze Knife"] = { ["Bronze Bar"] = 6, ["Weak Flux"] = 4, ["Rough Grinding Stone"] = 2, ["Tigerseye"] = 1, ["Medium Leather"] = 1, }, 
+	["Hardened Iron Shortsword"] = { ["Iron Bar"] = 6, ["Strong Flux"] = 2, ["Heavy Grinding Stone"] = 1, ["Lesser Moonstone"] = 2, ["Heavy Leather"] = 3, }, 
 	["Jade Serpentblade"] = { ["Iron Bar"] = 8, ["Strong Flux"] = 2, ["Heavy Grinding Stone"] = 2, ["Jade"] = 2, ["Heavy Leather"] = 3, }, 
 	["Solid Iron Maul"] = { ["Iron Bar"] = 8, ["Strong Flux"] = 2, ["Heavy Grinding Stone"] = 1, ["Silver Bar"] = 4, ["Heavy Leather"] = 2, }, 
 	["Golden Iron Destroyer"] = { ["Iron Bar"] = 10, ["Gold Bar"] = 4, ["Lesser Moonstone"] = 2, ["Strong Flux"] = 2, ["Heavy Leather"] = 2, ["Heavy Grinding Stone"] = 2, }, 
@@ -721,8 +720,8 @@ HerbieDB = {
 	["Ebon Shiv"] = { ["Mithril Bar"] = 12, ["Truesilver Bar"] = 6, ["Star Ruby"] = 2, ["Solid Grinding Stone"] = 1, ["Thick Leather"] = 2, }, 
 	["Truesilver Champion"] = { ["Mithril Bar"] = 30, ["Truesilver Bar"] = 16, ["Star Ruby"] = 6, ["Breath of Wind"] = 4, ["Solid Grinding Stone"] = 8, ["Thick Leather"] = 6, }, 
 	["Golden Scale Gauntlets"] = { ["Steel Bar"] = 10, ["Gold Bar"] = 4, ["Heavy Grinding Stone"] = 4, ["Citrine"] = 1, }, 
-	["Rough Copper Vest"] = { ["Copper Bar"] = 4, }, -- duplicate item, original: Searing Golden Blade
-	["Silvered Bronze Leggings"] = { ["Bronze Bar"] = 12, ["Silver Bar"] = 4, ["Coarse Grinding Stone"] = 2, }, -- duplicate item, original: Glinting Steel Dagger
+	["Rough Copper Vest"] = { ["Copper Bar"] = 4, }, 
+	["Silvered Bronze Leggings"] = { ["Bronze Bar"] = 12, ["Silver Bar"] = 4, ["Coarse Grinding Stone"] = 2, }, 
 	["Inlaid Mithril Cylinder"] = { ["Mithril Bar"] = 5, ["Gold Bar"] = 1, ["Truesilver Bar"] = 1, }, 
 	["Golden Rod"] = { ["Gold Bar"] = 1, ["Coarse Grinding Stone"] = 2, }, 
 	["Truesilver Rod"] = { ["Truesilver Bar"] = 1, ["Heavy Grinding Stone"] = 1, }, 
@@ -787,7 +786,7 @@ HerbieDB = {
 	["Corruption"] = { ["Thorium Bar"] = 40, ["Arcanite Bar"] = 2, ["Demonic Rune"] = 16, ["Essence of Undeath"] = 8, ["Blue Sapphire"] = 2, ["Dense Grinding Stone"] = 2, ["Rugged Leather"] = 4, }, 
 	["Blood Talon"] = { ["Enchanted Thorium Bar"] = 10, ["Arcanite Bar"] = 10, ["Demonic Rune"] = 8, ["Star Ruby"] = 10, ["Dense Grinding Stone"] = 2, }, 
 	["Darkspear"] = { ["Enchanted Thorium Bar"] = 20, ["Powerful Mojo"] = 20, ["Huge Emerald"] = 2, ["Azerothian Diamond"] = 2, ["Dense Grinding Stone"] = 2, }, 
-	["Hammer of the Titans"] = { ["Thorium Bar"] = 50, ["Arcanite Bar"] = 15, ["Guardian Stone"] = 4, ["Enchanted Leather"] = 6, ["Essence of Earth"] = 10, }, -- duplicate item, original: Fiery Chain Shoulders
+	["Hammer of the Titans"] = { ["Thorium Bar"] = 50, ["Arcanite Bar"] = 15, ["Guardian Stone"] = 4, ["Enchanted Leather"] = 6, ["Essence of Earth"] = 10, }, 
 	["Arcanite Champion"] = { ["Arcanite Bar"] = 15, ["Azerothian Diamond"] = 8, ["Righteous Orb"] = 1, ["Large Opal"] = 4, ["Enchanted Leather"] = 8, ["Dense Grinding Stone"] = 2, }, 
 	["Annihilator"] = { ["Thorium Bar"] = 40, ["Arcanite Bar"] = 12, ["Essence of Undeath"] = 10, ["Huge Emerald"] = 8, ["Dense Grinding Stone"] = 2, ["Enchanted Leather"] = 4, }, 
 	["Frostguard"] = { ["Arcanite Bar"] = 18, ["Blue Sapphire"] = 8, ["Azerothian Diamond"] = 8, ["Essence of Water"] = 4, ["Dense Grinding Stone"] = 2, ["Enchanted Leather"] = 4, }, 
