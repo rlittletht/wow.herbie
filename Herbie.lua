@@ -1,10 +1,65 @@
 
+local Herbie = LibStub("AceAddon-3.0"):GetAddon("Herbie")
+-- local GatherMate = LibStub("AceAddon-3.0"):NewAddon("GatherMate2","AceConsole-3.0","AceEvent-3.0")
+
+_G["Herbie"] = Herbie;
+
+-- print("db: " .. Herbie.ComponentDB)
+
+local dbDefaults = 
+{
+	profile = 
+	{
+    	professions = 
+    	{
+			fIncludeCooking = true,
+			fIncludeAlchemy = true,
+			fIncludeLeatherworking = true,
+			fIncludeBlacksmithing = true,
+			fIncludeTailoring = true,
+			fIncludeEnchanting = true
+		},
+    	excludeRecipes = {},
+	},
+}
+
+SLASH_HERBIE1 = "/herbie"
+SLASH_HERBIE2 = "/herbie1"
+SlashCmdList["HERBIE"] = function (msg, editbox)
+    local _, _, cmd, args = string.find(msg, "%s?(%w+)%s?(.*)")
+
+    if cmd == "dump" then
+    	debugPrintProfile("test", Herbie.dbAce.profile)
+		print("about to call sendmessage")
+		Herbie:SendMessage("HerbieConfigChanged")
+	elseif cmd == "change" then
+		print("changing profile...")
+		Herbie.dbAce.profile.professions.fIncludeCooking = false
+	elseif cmd == "options" and Herbie.optionsPanel then
+		InterfaceOptionsFrame_OpenToCategory(Herbie.optionsPanel)
+	end
+end
+
+function Herbie:OnInitialize()
+	-- the name of the acedb in the new statement has to match the saved variable
+	-- listed in Herbie.toc
+	self.dbAce = LibStub("AceDB-3.0"):New("HerbieOptionsDB", dbDefaults, "Default")
+	self.dbAce.RegisterCallback(self, "OnProfileChanged", "OnProfileChanged")
+	self.dbAce.RegisterCallback(self, "OnProfileCopied", "OnProfileChanged")
+	self.dbAce.RegisterCallback(self, "OnProfileReset", "OnProfileChanged")
+
+	--note the use of ":" below. this is the same as self.RegisterMessage(self, ...)
+	self:RegisterMessage("HerbieConfigChanged", "ConfigChanged")
+
+    InitializeConfig()
+end
+
 local function printHerbieDB()
     print('here')
-    for item,recipe in pairs(HerbieDB)
+    for item,recipe in pairs(Herbie.ComponentDB)
     do
 	print(item .. ": ")
-		for herb,count in pairs(HerbieDB[item])
+		for herb,count in pairs(Herbie.ComponentDB[item])
 		do
 			print(herb .. ':' .. count)
 		end
@@ -15,16 +70,29 @@ end
 -- printHerbieDB()
 -- print('done...')
 
+local function filterRecipe(recipe)
+    local typeMatch = "fInclude" .. recipe.type
+
+    if (Herbie.dbAce.profile.professions[typeMatch] == false) then
+    	return true
+    end
+
+    return false
+end
+
 local function lookupHerbItems(herbLookup)
     rgItems = {}
 
-    for item,recipe in pairs(HerbieDB) do
+    for item,recipe in pairs(Herbie.ComponentDB) do
     	local fMatched = false
-		for herb,count in pairs(HerbieDB[item]) do
-    		if herb == herbLookup then
-				if not(fMatched) then
-					table.insert(rgItems, item)
-					fMatched = true
+
+    	if filterRecipe(recipe) ~= true then
+			for herb,count in pairs(Herbie.ComponentDB[item].components) do
+				if herb == herbLookup then
+					if not(fMatched) then
+						table.insert(rgItems, item)
+						fMatched = true
+					end
 				end
 			end
 		end
@@ -43,7 +111,7 @@ function lookupHerbUses(herbLookup, fLong)
 	for i, item in ipairs(items) do
 		local first = true
     	local s = '|cff80ff80' .. item .. '|r: '
-    	local recipe = HerbieDB[item]
+    	local recipe = Herbie.ComponentDB[item].components
 
     	if fShortFirst == false then
     		sShort = sShort .. ", "
