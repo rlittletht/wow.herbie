@@ -73,16 +73,16 @@ local herbieGeneralOptions = {
 				},
 				showBlacksmithing = 
 				{
-					order = 3,
+					order = 4,
 					type = "toggle",
-					name = "Cooking",
+					name = "Blacksmithing",
 					desc = "Toggle showing Blacksmithing recipes",
 					width = "full",
 					arg = "fIncludeBlacksmithing"
 				},
 				showTailoring = 
 				{
-					order = 4,
+					order = 5,
 					type = "toggle",
 					name = "Tailoring",
 					desc = "Toggle showing Tailoring recipes",
@@ -91,7 +91,7 @@ local herbieGeneralOptions = {
 				},
 				showEnchanting = 
 				{
-					order = 5,
+					order = 6,
 					type = "toggle",
 					name = "Enchanting",
 					desc = "Toggle showing Enchanting recipes",
