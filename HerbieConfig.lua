@@ -13,48 +13,49 @@ local function setHerbieProfileProfessionsOption(item, val)
 end
 
 local herbieGeneralOptions = {
-    type = "group",
-    get = getHerbieProfileProfessionsOption,
-    set = setHerbieProfileProfessionsOption,
+	type = "group",
+	get = getHerbieProfileProfessionsOption,
+	set = setHerbieProfileProfessionsOption,
 
-    childGroups = "tab",
-    args={
-        description = 
-        {
-            order = 0,
-            type = "description",
-            name = "Options for Herbie component helper. Use these options to control what is displayed",
-        },
-        filters = 
-        {
-            order = 1,
-            type = "description",
-            name = "Filters"
-        },
-    	general =
-    	{
-    		type = "group", 
-    		desc = "General options for Herbie",
-    		name = "General",
-    		args =
-    		{
-    			desc = 
+	childGroups = "tab",
+	args=
+	{
+		description = 
+		{
+			order = 0,
+			type = "description",
+			name = "Options for Herbie component helper. Use these options to control what is displayed",
+		},
+		filters = 
+		{
+			order = 1,
+			type = "description",
+			name = "Filters"
+		},
+		general =
+		{
+			type = "group", 
+			desc = "General options for Herbie",
+			name = "General",
+			args =
+			{
+				desc = 
 				{
 					order = 0,
 					type = "description",
 					name = "General options for Herbie"
 				},
-    			showLeatherworking = 
-    			{
-    				order = 1,
-    				type = "toggle",
-    				name = "Leatherworking",
-    				desc = "Toggle showing Leatherworking recipes",
-    				width = "full",
-    				arg = "fIncludeLeatherworking"
+				showLeatherworking = 
+				{
+					order = 1,
+					type = "toggle",
+					name = "Leatherworking",
+					desc = "Toggle showing Leatherworking recipes",
+					width = "full",
+					arg = "fIncludeLeatherworking"
 				},
-    			showAlchemy = 
-    			{
+				showAlchemy = 
+				{
 					order = 2,
 					type = "toggle",
 					name = "Alchemy",
@@ -100,7 +101,59 @@ local herbieGeneralOptions = {
 				},
 			}
 		},
-        leatherWorking = 
+	}
+}
+
+local function getHerbieCompFilterValue(item, val)
+--	print("item: " .. tostring(Herbie.dbAce.profile[item.arg]))
+--	print("val: " .. tostring(val))
+--	print("item.option: " .. tostring(item.option))
+--	print("item.option.values: " .. tostring(item.option.values))
+--	print("item.option.values[val]: " .. tostring(item.option.values[val]))
+
+	if (Herbie.dbAce.profile[item.arg][item.option.values[val]] == nil) then
+    	return false
+	end
+
+	return Herbie.dbAce.profile[item.arg][item.option.values[val]]
+end
+
+local function setHerbieCompFilterValue(item, val)
+    -- the val in this case will be an index into item.values[]
+--    print("item: " .. tostring(Herbie.dbAce.profile[item.arg]))
+--    print("val: " .. tostring(val))
+--    print("item.option: " .. tostring(item.option))
+--    print("item.option.values: " .. tostring(item.option.values))
+--	print("item.option.values[val]: " .. tostring(item.option.values[val]))
+
+	if (Herbie.dbAce.profile[item.arg][item.option.values[val]] == nil) then
+		Herbie.dbAce.profile[item.arg][item.option.values[val]] = true
+	else
+		Herbie.dbAce.profile[item.arg][item.option.values[val]] = nil
+	end
+end
+
+local herbieFilterOptions = {
+    type = "group",
+    get = getHerbieCompFilterValue,
+    set = setHerbieCompFilterValue,
+
+    childGroups = "tab",
+    args=
+	{
+        description = 
+        {
+            order = 0,
+            type = "description",
+            name = "Options for Herbie component helper. Use these options to control what is displayed",
+        },
+        filters = 
+        {
+            order = 1,
+            type = "description",
+            name = "Filters"
+        },
+        leatherworking = 
         {
             type = "group",
             name = "Leatherworking",
@@ -110,19 +163,134 @@ local herbieGeneralOptions = {
                 itemList = 
                 {
                     order = 1,
-                    name = "ComponentsName",
+                    name = "Select items to ignore",
                     type = "multiselect",
-                    values = {"Rugged Leather", "Heavy Leather"},
-                    arg = "ComponentsArg"
+                    values = {},
+                    arg = "LeatherworkingFilter"
                 }
             }
-        }
+        },
+		alchemy = 
+		{
+			type = "group",
+			name = "Alchemy",
+			desc = "Select the leather working components to ignore",
+			args =
+			{
+				itemList = 
+				{
+					order = 1,
+					name = "Select items to ignore",
+					type = "multiselect",
+					values = {},
+					arg = "AlchemyFilter"
+				}
+			}
+		},
+		tailoring = 
+		{
+			type = "group",
+			name = "Tailoring",
+			desc = "Select the leather working components to ignore",
+			args =
+			{
+				itemList = 
+				{
+					order = 1,
+					name = "Select items to ignore",
+					type = "multiselect",
+					values = {},
+					arg = "TailoringFilter"
+				}
+			}
+		},
+		blacksmithing = 
+		{
+			type = "group",
+			name = "Blacksmithing",
+			desc = "Select the leather working components to ignore",
+			args =
+			{
+				itemList = 
+				{
+					order = 1,
+					name = "Select items to ignore",
+					type = "multiselect",
+					values = {},
+					arg = "BlacksmithingFilter"
+				}
+			}
+		},
+		enchanting = 
+		{
+			type = "group",
+			name = "Enchanting",
+			desc = "Select the leather working components to ignore",
+			args =
+			{
+				itemList = 
+				{
+					order = 1,
+					name = "Select items to ignore",
+					type = "multiselect",
+					values = {},
+					arg = "EnchantingFilter"
+				}
+			}
+		},
+		cooking = 
+		{
+			type = "group",
+			name = "Cooking",
+			desc = "Select the leather working components to ignore",
+			args =
+			{
+				itemList = 
+				{
+					order = 1,
+					name = "Select items to ignore",
+					type = "multiselect",
+					values = {},
+					arg = "CookingFilter"
+				}
+			}
+		},
     }
 }
 
+local function getCompsListForType(type)
+    local keys = {}
+    local keysHash  = {}
+
+    for item, recipe in pairs(Herbie.ComponentDB) do
+    	if recipe.type == type and recipe.components ~= nil then
+--     		print("components = " .. tostring(recipe.components))
+			for comp in pairs(recipe.components) do
+				if (keysHash[comp] == nil) then
+					keys[#keys + 1] = comp
+					keysHash[comp] = true
+				end
+			end
+		end
+	end
+
+    return keys
+end
+
+
 function InitializeConfig()
+    herbieFilterOptions.args.leatherworking.args.itemList.values = getCompsListForType("Leatherworking")
+	herbieFilterOptions.args.alchemy.args.itemList.values = getCompsListForType("Alchemy")
+	herbieFilterOptions.args.enchanting.args.itemList.values = getCompsListForType("Enchanting")
+	herbieFilterOptions.args.tailoring.args.itemList.values = getCompsListForType("Tailoring")
+	herbieFilterOptions.args.blacksmithing.args.itemList.values = getCompsListForType("Blacksmithing")
+	herbieFilterOptions.args.cooking.args.itemList.values = getCompsListForType("Cooking")
+
     acr:RegisterOptionsTable("Herbie", herbieGeneralOptions, "/herbieopt")
     Herbie.optionsPanel = acd:AddToBlizOptions("Herbie", "Herbie")
+
+	acr:RegisterOptionsTable("Herbie/Filters", herbieFilterOptions, "/herbieopt")
+	acd:AddToBlizOptions("Herbie/Filters", "Filters", "Herbie")
 end
 
 function debugPrintProfile(name, profile)

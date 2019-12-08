@@ -19,6 +19,13 @@ local dbDefaults =
 			fIncludeTailoring = true,
 			fIncludeEnchanting = true
 		},
+    	LeatherworkingFilter = { },
+		EnchantingFilter = { },
+		CookingFilter = { },
+		AlchemyFilter = { },
+		TailoringFilter = { },
+		BlacksmithingFilter = { },
+
     	excludeRecipes = {},
 	},
 }
@@ -70,12 +77,27 @@ end
 -- printHerbieDB()
 -- print('done...')
 
-local function filterRecipe(recipe)
+local function filterRecipe(recipe, component)
     local typeMatch = "fInclude" .. recipe.type
 
     if (Herbie.dbAce.profile.professions[typeMatch] == false) then
     	return true
     end
+
+    -- now check to see if the professions wants this component filtered...
+    -- (we do this check here because you might only want to filter a
+    -- component for a certain profession, but you want to see it for
+    -- another profession)
+
+    -- the filter collection is in "*Filter" table value, where *
+    -- is the profession
+    local filterCollection = recipe.type .. "Filter"
+
+	if Herbie.dbAce.profile[filterCollection] ~= nil then
+    	if Herbie.dbAce.profile[filterCollection][component] ~= nil then
+			return Herbie.dbAce.profile[filterCollection][component]
+		end
+	end
 
     return false
 end
@@ -86,7 +108,7 @@ local function lookupHerbItems(herbLookup)
     for item,recipe in pairs(Herbie.ComponentDB) do
     	local fMatched = false
 
-    	if filterRecipe(recipe) ~= true then
+    	if filterRecipe(recipe, herbLookup) ~= true then
 			for herb,count in pairs(Herbie.ComponentDB[item].components) do
 				if herb == herbLookup then
 					if not(fMatched) then
